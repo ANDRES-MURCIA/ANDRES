@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.emoji {
+    font-size: 24px;
+}
+
+#seleccionar-mascota {
+    margin-bottom: 20px;
+}
+
+#seleccionar-mascota h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.radio-container {
+    margin-bottom: 10px;
+}
+
+.radio-container label {
+    margin-right: 10px;
+}
+
+#seleccionar-ataque h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+#seleccionar-ataque p {
+    margin-bottom: 10px;
+}
+
+#seleccionar-ataque button {
+    margin-right: 10px;
+}
+
+#mensajes p {
+    margin-bottom: 10px;
+}
+
+#reiniciar {
+    margin-top: 20px;
+}
+
+#reiniciar button {
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#reiniciar button:hover {
+    background-color: #990000;
+}
+
+/* Agregar colores a las palabras */
+#mascota-jugador,
+#mascota-enemigo {
+    color: #ff6b00; /* Naranja */
+}
+
+#seleccionar-ataque span {
+    color: #2678b2; /* Azul */
+}
+
+#boton-fuego {
+    background-color: #ff6b00; /* Naranja */
+    color: #fff;
+}
+
+#boton-agua {
+    background-color: #00a0b0; /* Cian */
+    color: #fff;
+}
+
+#boton-tierra {
+    background-color: #8eb814; /* Verde */
+    color: #fff;
+}
