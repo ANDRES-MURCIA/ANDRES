@@ -1,5 +1,5 @@
-num1 = int(input("Digite un número entero "))
-num2 = int(input("Digite un número entero "))
+num1 = int(input("Digite un número entero: "))
+num2 = int(input("Digite un número entero: "))
 
 if num1 == num2:
     print("Son iguales")
