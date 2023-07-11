@@ -8,3 +8,7 @@ my_module.printValue("Hola python")
 
 suma(1,2,3)
 printValue("Hola python")
+
+import math
+
+print(math.pi)
