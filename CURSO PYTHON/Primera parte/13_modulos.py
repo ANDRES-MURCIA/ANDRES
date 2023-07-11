@@ -1,14 +1,20 @@
 ### Modules ###
 
+from math import pi as PI_VALUE
+import math
+from my_module import sumValue, printValue
 import my_module
-from my_module import suma, printValue
 
-my_module.suma(1,2,3)
-my_module.printValue("Hola python")
+my_module.sumValue(5, 3, 1)
+my_module.printValue("Hola Python!")
 
-suma(1,2,3)
+
+sumValue(5, 3, 1)
 printValue("Hola python")
 
-import math
 
 print(math.pi)
+print(math.pow(2, 8))
+
+
+print(PI_VALUE)
