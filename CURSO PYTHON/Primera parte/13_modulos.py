@@ -2,14 +2,14 @@
 
 from math import pi as PI_VALUE
 import math
-from my_module import sumValue, printValue
+from my_module import suma, printValue
 import my_module
 
-my_module.sumValue(5, 3, 1)
+my_module.suma(5, 3, 1)
 my_module.printValue("Hola Python!")
 
 
-sumValue(5, 3, 1)
+suma(5, 3, 1)
 printValue("Hola python")
 
 
