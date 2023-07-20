@@ -1,3 +1,5 @@
+# Contar cuántas veces aparece un elemento en una lista
+
 lista = [1, 2, 3, 2, 4, 2, 5, 2]
 elemento = 2
 contador = 0
