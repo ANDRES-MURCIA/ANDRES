@@ -6,8 +6,8 @@ while count <= 100:
     count += 2
 # --------------------------------------------
 num = int(input("Ingrese el número: "))
-var = 1
 
+var = 1
 while var <= 10:
     print(num, "x", var, "=", var * num)
     var += 1
