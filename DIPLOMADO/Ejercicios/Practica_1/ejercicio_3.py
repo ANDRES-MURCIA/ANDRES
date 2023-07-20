@@ -1,6 +1,2 @@
-suma = 0
-
-for i in range(1,101,1):
-    suma += i
-
-print(suma)
+for i in range(1,31,2):
+    print(i)

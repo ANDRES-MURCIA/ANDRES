@@ -1,4 +1,2 @@
-caracter = str(input("Ingrese el/los caracter: "))
-
-for i in reversed(caracter):
+for i in range(10,0,-1):
     print(i)

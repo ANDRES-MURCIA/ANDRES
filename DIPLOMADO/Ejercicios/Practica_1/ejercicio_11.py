@@ -1,4 +1,4 @@
-lista = ["perro","perro","gato","loro"]
+caracter = str(input("Ingrese el/los caracter: "))
 
-for perro in lista:
-    print(perro.count("perro"))
+for i in reversed(caracter):
+    print(i)

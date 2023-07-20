@@ -1,7 +1,2 @@
-producto = 1
-
-for i in range(1,101,1):
-    producto *= i
-    
-print(producto)
-
+for i in (1,2,3,4,5):
+    print(i)

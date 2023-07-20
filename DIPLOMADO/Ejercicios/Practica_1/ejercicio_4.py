@@ -1,2 +1,6 @@
-for i in [1,2,3,4,5,6,7]:
-    print(i)
+suma = 0
+
+for i in range(1,101,1):
+    suma += i
+
+print(suma)

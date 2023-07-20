@@ -1,4 +1,2 @@
-cadena = str(input("Ingrese la cadena: "))
-
-for i in cadena:
+for i in [1,2,3,4,5,6,7]:
     print(i)

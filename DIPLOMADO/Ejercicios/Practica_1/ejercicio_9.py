@@ -1,2 +1,4 @@
-for i in range(10,0,-1):
-    print(i)
+palabra = ["perro", "gato", "loro"]
+
+for i in palabra:
+    print(len(i))
