@@ -12,23 +12,58 @@ suma(2,3)
 
 print("-----------------------------------")
 
-def calculadora(num1,num2):
+def suma(a, b):
+    return a + b
+
+def resta(a, b):
+    return a - b
+
+def multiplicacion(a, b):
+    return a * b
+
+def division(a, b):
+    if b == 0:
+        return "Error: No es posible dividir entre cero."
+    return a / b
+
+def menu():
+    print("Calculadora")
+    print("1. Suma")
+    print("2. Resta")
+    print("3. Multiplicación")
+    print("4. División")
+    print("5. Salir")
+
+def calculadora():
     while True:
-        print("INGRESE LOS DOS NÚMEROS A CALCULAR")
-        suma,Resta,Multiplicación = num1 + num2, num1 - num2, num1 * num2
-        print("Que operación desea realizar:\n1. Suma\n2. Resta\n3. Multiplicación\n4. División\n5. Cancelar y Salir")
-        
-        user = int(input("---- "))
-        if user == 1:
-            print(suma)
-        elif user == 2:
-            print(Resta)
-        elif user == 3:
-            print(Multiplicación)
-        elif num2 == 0:
-            print("ERROR, no se puede dividir entre 0 \nvuelve a intentarlo\n----- ")
-        elif user == 4:
-            print(num1 / num2)
-        elif user == 5:
+        menu()
+        opcion = input("Seleccione una opción (1/2/3/4/5): ")
+
+        if opcion == '5':
+            print("Saliendo de la calculadora.")
             break
-calculadora(num1=int(input("Ingrese el primer número: ")),num2=int(input("Ingrese el primer número: ")))
+
+        if opcion not in {'1', '2', '3', '4'}:
+            print("Opción inválida. Por favor, elija una opción válida (1/2/3/4/5).")
+            continue
+
+        num1 = input("Ingrese el primer número: ")
+        num2 = input("Ingrese el segundo número: ")
+
+        if not num1.isnumeric() or not num2.isnumeric():
+            print("Error: Ingrese números válidos.")
+            continue
+
+        num1 = float(num1)
+        num2 = float(num2)
+
+        if opcion == '1':
+            print("Resultado:", suma(num1, num2))
+        elif opcion == '2':
+            print("Resultado:", resta(num1, num2))
+        elif opcion == '3':
+            print("Resultado:", multiplicacion(num1, num2))
+        elif opcion == '4':
+            print("Resultado:", division(num1, num2))
+
+calculadora()
