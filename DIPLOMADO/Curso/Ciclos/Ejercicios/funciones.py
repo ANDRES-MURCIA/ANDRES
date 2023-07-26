@@ -12,10 +12,9 @@ suma(2,3)
 
 print("-----------------------------------")
 
-def calculadora():
+def calculadora(num1,num2):
     while True:
         print("INGRESE LOS DOS NÚMEROS A CALCULAR")
-        num1, num2 = int(input("Ingrese el primer número: ")), int(input("Ingrese el segundo número: "))
         suma,Resta,Multiplicación = num1 + num2, num1 - num2, num1 * num2
         print("Que operación desea realizar:\n1. Suma\n2. Resta\n3. Multiplicación\n4. División\n5. Cancelar y Salir")
         
@@ -32,4 +31,4 @@ def calculadora():
             print(num1 / num2)
         elif user == 5:
             break
-calculadora()
+calculadora(num1=int(input("Ingrese el primer número: ")),num2=int(input("Ingrese el primer número: ")))
