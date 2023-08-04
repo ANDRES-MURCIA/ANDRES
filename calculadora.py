@@ -1,48 +1,76 @@
 import tkinter as tk
 
-def on_button_click(event):
-    # Obtener el texto del botón presionado
-    button_text = event.widget.cget('text')
+def click_event(event):
+    # Obtiene el contenido actual del campo de entrada (entry)
+    current = str(entry.get())
+    # Obtiene el texto del botón clicado durante el evento
+    text = event.widget.cget("text")
+    # Borra el contenido actual del campo de entrada
+    entry.delete(0, tk.END)
+    # Inserta el número u operador clicado al final del campo de entrada
+    entry.insert(tk.END, current + text)
 
-    if button_text == '=':
-        try:
-            # Evaluar la expresión matemática y mostrar el resultado
-            result = eval(entry.get())
-            entry.delete(0, tk.END)
-            entry.insert(tk.END, str(result))
-        except:
-            entry.delete(0, tk.END)
-            entry.insert(tk.END, "Error")
+def clear():
+    # Borra todo el contenido del campo de entrada
+    entry.delete(0, tk.END)
 
-    else:
-        # Agregar el texto del botón al final del campo de entrada
-        current_text = entry.get()
+def calculate():
+    try:
+        # Evalúa la expresión matemática del campo de entrada
+        result = eval(entry.get())
+        # Borra el contenido del campo de entrada
         entry.delete(0, tk.END)
-        entry.insert(tk.END, current_text + button_text)
+        # Muestra el resultado en el campo de entrada
+        entry.insert(tk.END, result)
+    except Exception as e:
+        # Si hay un error en la evaluación, muestra "Error" en el campo de entrada
+        entry.delete(0, tk.END)
+        entry.insert(tk.END, "Error")
 
 root = tk.Tk()
-root.title("Calculadora")
+root.title("Calculadora Básica")
 
-entry = tk.Entry(root, width=30, borderwidth=5)
-entry.grid(row=0, column=0, columnspan=4, padx=10, pady=10)
+# Crear el campo de entrada
+entry = tk.Entry(root, font="Helvetica 20 bold", bd=5, justify="right")
+entry.grid(row=0, column=0, columnspan=4)
 
-buttons = [
-    '7', '8', '9', '/',
-    '4', '5', '6', '*',
-    '1', '2', '3', '-',
-    '0', '.', '=', '+'
+# Crear los botones numéricos
+button_values = [
+    ("7", 1, 0), ("8", 1, 1), ("9", 1, 2),
+    ("4", 2, 0), ("5", 2, 1), ("6", 2, 2),
+    ("1", 3, 0), ("2", 3, 1), ("3", 3, 2),
+    ("0", 4, 0), (".", 4, 1)
 ]
 
-row = 1
-col = 0
+for value, row, col in button_values:
+    # Crear un botón con el valor numérico y configuraciones de apariencia
+    button = tk.Button(root, text=value, font="Helvetica 20", padx=15, pady=15)
+    # Colocar el botón en la fila y columna especificada
+    button.grid(row=row, column=col)
+    # Asociar la función click_event() al evento clic izquierdo en el botón
+    button.bind("<Button-1>", click_event)
 
-for button_text in buttons:
-    button = tk.Button(root, text=button_text, padx=20, pady=20)
-    button.grid(row=row, column=col, padx=5, pady=5)
-    button.bind("<Button-1>", on_button_click)
-    col += 1
-    if col > 3:
-        col = 0
-        row += 1
+# Crear los botones de operadores
+operators = ["+", "-", "*", "/"]
+row_counter = 1
+col_counter = 3
+
+for operator in operators:
+    # Crear un botón con el operador y configuraciones de apariencia
+    button = tk.Button(root, text=operator, font="Helvetica 20", padx=15, pady=15)
+    # Colocar el botón en la fila y columna especificada
+    button.grid(row=row_counter, column=col_counter)
+    # Asociar la función click_event() al evento clic izquierdo en el botón
+    button.bind("<Button-1>", click_event)
+    # Pasar a la siguiente fila para el próximo botón
+    row_counter += 1
+
+# Botón de igual
+button_equal = tk.Button(root, text="=", font="Helvetica 20", padx=15, pady=15, command=calculate)
+button_equal.grid(row=4, column=2)
+
+# Botón de limpiar
+button_clear = tk.Button(root, text="C", font="Helvetica 20", padx=15, pady=15, command=clear)
+button_clear.grid(row=4, column=1)
 
 root.mainloop()
