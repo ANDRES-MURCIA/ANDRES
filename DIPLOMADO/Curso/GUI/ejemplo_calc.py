@@ -18,8 +18,10 @@ def on_button_click(event):
 
 root = Tk()
 root.title("Calculadora")
+root.iconbitmap("calculadora.ico")
+root.config(bg="green")
 
-entry = Entry(root, width=30, borderwidth=5, justify='right')
+entry = Entry(root, width=30, borderwidth=5, justify='right', bg="Black", fg="white")
 entry.grid(row=0, column=0, columnspan=4, padx=10, pady=10)
 
 buttons = [
