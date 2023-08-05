@@ -4,11 +4,23 @@ operacion = ""
 
 def button_click(num):
     global operacion
+    operacion += str(num)
+    numero_pantalla.set(operacion)
 
-    if operacion != "":
-        numero_pantalla.set(num)
-    else:
-        numero_pantalla.set(numero_pantalla.get() + num)
+def clear_display():
+    global operacion
+    operacion = ""
+    numero_pantalla.set("")
+
+def calculate():
+    global operacion
+    try:
+        resultado = str(eval(operacion))
+        numero_pantalla.set(resultado)
+        operacion = resultado
+    except Exception as e:
+        numero_pantalla.set("Error")
+        operacion = ""
 
 interfaz = Tk()
 interfaz.title("Calculadora")
@@ -79,7 +91,7 @@ punto = Button(frame, text=".", width=3, command=lambda: button_click("."))
 punto.grid(row=4, column=2,padx=1, pady=1)
 punto.config(width="8", height="4")
 
-igual = Button(frame, text="=", width=3, command=lambda: button_click("="))
+igual = Button(frame, text="=", width=3, command=calculate)
 igual.grid(row=4, column=3,padx=1, pady=1)
 igual.config(width="8", height="4")
 
