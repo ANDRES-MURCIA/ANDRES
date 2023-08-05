@@ -20,7 +20,7 @@ frame.pack()
 numero_pantalla = StringVar()
 
 pantalla = Entry(frame, textvariable=numero_pantalla, width=40, borderwidth=10)
-pantalla.grid(row=0, column=0, columnspan=5, padx=10, pady=10)
+pantalla.grid(row=0, column=1, columnspan=4, padx=10, pady=10)
 pantalla.config(justify="right", bg="black", fg="white")
 
 boton7 = Button(frame, text="7", width=3, command=lambda: button_click("7"))
