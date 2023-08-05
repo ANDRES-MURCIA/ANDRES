@@ -1,33 +1,35 @@
 from tkinter import *
 from tkinter import messagebox
 
-def accion_submenu1():
-    messagebox.showinfo("Submenú 1", "¡Has seleccionado Submenú 1!")
-
-def accion_submenu2():
-    messagebox.showinfo("Submenú 2", "¡Has seleccionado Submenú 2!")
-
-def accion_submenu3():
-    messagebox.showinfo("Submenú 3", "¡Has seleccionado Submenú 3!")
 
 def accion_salir():
-    ventana.quit()
+    respuesta = messagebox.askquestion("Desea salir", "¿Elige?")
+    if respuesta == "yes":
+        ventana.destroy()
+    else:
+        messagebox.showinfo("No saliste")
+
 
 ventana = Tk()
-ventana.title("Menú y Submenús")
+ventana.title("Menus")
 
 barra_menu = Menu(ventana)
-ventana.config(menu=barra_menu)
+ventana.config(menu=barra_menu, width=300, height=300)
 
-menu_archivo = Menu(barra_menu, tearoff=0)
-barra_menu.add_cascade(label="Archivo", menu=menu_archivo)
-menu_archivo.add_command(label="Salir", command=accion_salir)
+archivo_menu_1 = Menu(barra_menu, tearoff=0)
+archivo_menu_1.add_command(label="nuevo")
+archivo_menu_1.add_command(label="Edición")
 
-menu_opciones = Menu(barra_menu, tearoff=0)
-barra_menu.add_cascade(label="Opciones", menu=menu_opciones)
+archivo_menu_2 = Menu(barra_menu, tearoff=0)
+archivo_menu_2.add_command(label="Ejemplo")
+archivo_menu_2.add_command(label="Versión")
 
-menu_opciones.add_command(label="Submenú 1", command=accion_submenu1)
-menu_opciones.add_command(label="Submenú 2", command=accion_submenu2)
-menu_opciones.add_command(label="Submenú 3", command=accion_submenu3)
+archivo_menu_3 = Menu(barra_menu, tearoff=0)
+archivo_menu_3.add_command(label="Salir", command=accion_salir)
+
+barra_menu.add_cascade(label="Archivo", menu=archivo_menu_1)
+barra_menu.add_cascade(label="Otro", menu=archivo_menu_2)
+barra_menu.add_cascade(label="Ayuda", menu=archivo_menu_3)
+
 
 ventana.mainloop()
