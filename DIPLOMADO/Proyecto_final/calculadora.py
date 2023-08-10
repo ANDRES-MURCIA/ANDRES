@@ -114,5 +114,5 @@ def check_answer(selected):
             current_question = 0
             load_question()
 
-load_question()  # Cargar la primera pregunta
+load_question()
 root.mainloop()
