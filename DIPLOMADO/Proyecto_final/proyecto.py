@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import messagebox  
 from PIL import Image, ImageTk
-
+ 
 root = tk.Tk()  # Crear la ventana principal
 root.title("Juego de Preguntas")
 root.iconbitmap("icono.ico")
