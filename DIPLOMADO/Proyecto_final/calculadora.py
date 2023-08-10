@@ -37,7 +37,7 @@ questions = [
 question_label = tk.Label(root, text="Questions", wraplength=750, font=("Helvetica", 30, "bold"))
 question_label.pack(pady=20)
 
-answer_buttons = []
+answer_buttons = [] 
 for i in range(4):
     button = tk.Button(root, text="Answers", command=lambda i=i: check_answer(i), height=3, width=40, font=("Helvetica", 12))
     button.pack(pady=5)
