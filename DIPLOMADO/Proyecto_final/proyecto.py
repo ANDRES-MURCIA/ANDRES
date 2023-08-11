@@ -39,7 +39,7 @@ question_label.pack(pady=20)
 
 answer_buttons = [] 
 for i in range(4):
-    button = Button(root, text="Answers", command=lambda i=i: check_answer(i), height=3, width=40, font=("Helvetica", 12))
+    button = Button(root, text="Answers", command=lambda i=i: check_answer(i), height=3, width=40, font=("Helvetica", 12), bg="black", fg="white", relief="sunken", cursor="hand2")
     button.pack(pady=5)
     answer_buttons.append(button)
 
