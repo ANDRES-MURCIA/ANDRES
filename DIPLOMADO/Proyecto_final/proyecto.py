@@ -5,7 +5,7 @@ from PIL import Image, ImageTk
 root = tk.Tk()  # Crear la ventana principal
 root.title("Juego de Preguntas")
 root.iconbitmap("icono.ico")
-root.geometry("900x600")  # Ajusta el tamaño de la ventana
+root.geometry("900x570")  # Ajusta el tamaño de la ventana
 root.config(bg="black")
 root.resizable(0,0)
 
