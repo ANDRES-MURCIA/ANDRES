@@ -778,17 +778,17 @@ questions = [
     },
 ]
 
-question_label = Label(
+preguntas = Label(
     root, text="Questions", wraplength=750, font=("Helvetica", 25, "bold")
 )
-question_label.pack(pady=20)
+preguntas.pack(pady=20)
 
-answer_buttons = []
+respuestas = []
 for i in range(4):
-    button = Button(
+    boton = Button(
         root,
         text="Answers",
-        command=lambda i=i: check_answer(i),
+        command=lambda i=i: checkar_preguntas(i),
         height=3,
         width=40,
         font=("Helvetica", 12),
@@ -797,97 +797,97 @@ for i in range(4):
         relief="sunken",
         cursor="hand2",
     )
-    button.pack(pady=5)
-    answer_buttons.append(button)
+    boton.pack(pady=5)
+    respuestas.append(boton)
 
-opportunities = 2
-current_question = 0
-attempts = 0
-total_points = 0
-highest_score = 0
+oportunidades = 2
+pregunta_actual = 0
+intentos = 0
+puntos = 0
+record = 0
 
-points_label = Label(root, text="Puntos", font=("Helvetica", 20, "bold"), fg="red")
-points_label.pack(anchor="nw", padx=20, pady=2)
+etiqueta_puntos = Label(root, text="Puntos", font=("Helvetica", 20, "bold"), fg="red")
+etiqueta_puntos.pack(anchor="nw", padx=20, pady=2)
 
-question_counter_label = Label(
+contador = Label(
     root, text="Preguntas", font=("Helvetica", 20, "bold"), fg="brown"
 )
-question_counter_label.pack(anchor="center", padx=10, pady=2)
+contador.pack(anchor="center", padx=10, pady=2)
 
-highest_score_label = Label(
+registro = Label(
     root, text="Record", font=("Helvetica", 35, "bold"), fg="green"
 )
-highest_score_label.pack(anchor="se", padx=20, pady=2)
+registro.pack(anchor="se", padx=20, pady=2)
 
 
-def load_question():
-    global attempts
-    if current_question < len(questions):
-        question_data = questions[current_question]
-        question_label.config(text=question_data["question"])
+def cargar_preguntas():
+    global intentos
+    if pregunta_actual < len(questions):
+        datos_preguntas = questions[pregunta_actual]
+        preguntas.config(text=datos_preguntas["question"])
 
         for i in range(4):
-            answer_buttons[i].config(text=question_data["options"][i])
+            respuestas[i].config(text=datos_preguntas["options"][i])
 
-        attempts = 0
-        question_counter_label.config(
-            text=f"Pregunta: {current_question+1}/{len(questions)}"
+        intentos = 0
+        contador.config(
+            text=f"Pregunta: {pregunta_actual+1}/{len(questions)}"
         )
-        points_label.config(text=f"Puntos: {total_points}/1000")
-        highest_score_label.config(text=f"Record: {highest_score}")
+        etiqueta_puntos.config(text=f"Puntos: {puntos}/1000")
+        registro.config(text=f"Record: {record}")
 
 
-def check_answer(selected):
-    global current_question, opportunities, attempts, total_points, highest_score
+def checkar_preguntas(selected):
+    global pregunta_actual, oportunidades, intentos, puntos, record
 
-    question_data = questions[current_question]
-    correct_answer = question_data["correct"]
-    attempts += 1
+    datos_preguntas = questions[pregunta_actual]
+    respuesta_correcta = datos_preguntas["correct"]
+    intentos += 1
 
-    if selected == correct_answer:
-        if attempts == 1:
-            total_points += 10
-        elif attempts == 2:
-            total_points += 5
+    if selected == respuesta_correcta:
+        if intentos == 1:
+            puntos += 10
+        elif intentos == 2:
+            puntos += 5
 
-        current_question += 1
-        opportunities = 2
+        pregunta_actual += 1
+        oportunidades = 2
 
-        if total_points > highest_score:
-            highest_score = total_points
+        if puntos > record:
+            record = puntos
 
-        if current_question < len(questions):
-            load_question()
+        if pregunta_actual < len(questions):
+            cargar_preguntas()
         else:
             messagebox.showinfo(
                 "Fin del juego",
-                f"¡Has respondido todas las preguntas correctamente! Puntaje total: {total_points} puntos",
+                f"¡Has respondido todas las preguntas correctamente! Puntaje total: {puntos} puntos",
             )
             fin = messagebox.askquestion("De nuevo", "¿Quieres superar tu record?")
             if fin == "yes":
-                total_points = 0
-                current_question = 0
-                load_question()
+                puntos = 0
+                pregunta_actual = 0
+                cargar_preguntas()
             else:
                 root.destroy()
 
     else:
-        opportunities -= 1
-        if opportunities > 0:
+        oportunidades -= 1
+        if oportunidades > 0:
             messagebox.showinfo(
                 "Incorrecto",
-                f"Respuesta incorrecta. Te queda {opportunities} oportunidad.",
+                f"Respuesta incorrecta. Te queda {oportunidades} oportunidad.",
             )
         else:
             messagebox.showinfo(
                 "Sin oportunidades",
-                f"¡Perdiste todas las oportunidades! Volviendo a la pregunta 1. Puntaje total: {total_points}",
+                f"¡Perdiste todas las oportunidades! Volviendo a la pregunta 1. Puntaje total: {puntos}",
             )
-            opportunities = 2
-            total_points = 0
-            current_question = 0
-            load_question()
+            oportunidades = 2
+            puntos = 0
+            pregunta_actual = 0
+            cargar_preguntas()
 
 
-load_question()
+cargar_preguntas()
 root.mainloop()
