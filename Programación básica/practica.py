@@ -333,5 +333,6 @@ class EmpleadosApp(tk.Frame):
 # Crear y ejecutar la ventana principal de la aplicación
 create_table()
 root = tk.Tk()
+root.title("DB")
 app = EmpleadosApp(master=root)
 app.mainloop()
