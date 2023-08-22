@@ -1,7 +1,7 @@
 from flask import Flask
 from flask import render_template, request, redirect
 from flaskext.mysql import MySQL
-
+#
 app = Flask(__name__)
 
 # Crear conexión a la base de datos
