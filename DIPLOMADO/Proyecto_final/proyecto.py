@@ -806,16 +806,16 @@ intentos = 0
 puntos = 0
 record = 0
 
-etiqueta_puntos = Label(root, text="Puntos", font=("Helvetica", 20, "bold"), fg="red")
+etiqueta_puntos = Label(root, text="Puntos", font=("Helvetica", 20, "bold"), fg="red", bg="black")
 etiqueta_puntos.pack(anchor="nw", padx=20, pady=2)
 
 contador = Label(
-    root, text="Preguntas", font=("Helvetica", 20, "bold"), fg="brown"
+    root, text="Preguntas", font=("Helvetica", 20, "bold"), fg="brown", bg="black"
 )
 contador.pack(anchor="center", padx=10, pady=2)
 
 registro = Label(
-    root, text="Record", font=("Helvetica", 35, "bold"), fg="green"
+    root, text="Record", font=("Helvetica", 35, "bold"), fg="green", bg="black"
 )
 registro.pack(anchor="se", padx=20, pady=2)
 
