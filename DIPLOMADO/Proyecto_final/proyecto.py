@@ -806,7 +806,9 @@ intentos = 0
 puntos = 0
 record = 0
 
-etiqueta_puntos = Label(root, text="Puntos", font=("Helvetica", 20, "bold"), fg="red", bg="black")
+etiqueta_puntos = Label(
+    root, text="Puntos", font=("Helvetica", 20, "bold"), fg="red", bg="black"
+)
 etiqueta_puntos.pack(anchor="nw", padx=20, pady=2)
 
 contador = Label(
@@ -830,9 +832,7 @@ def cargar_preguntas():
             respuestas[i].config(text=datos_preguntas["options"][i])
 
         intentos = 0
-        contador.config(
-            text=f"Pregunta: {pregunta_actual+1}/{len(questions)}"
-        )
+        contador.config(text=f"Pregunta: {pregunta_actual+1}/{len(questions)}")
         etiqueta_puntos.config(text=f"Puntos: {puntos}/1000")
         registro.config(text=f"Record: {record}")
 
