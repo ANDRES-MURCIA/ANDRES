@@ -2,15 +2,14 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f8f8f8;
-    color: #333;
-    background-image: url("/Agrivereda/img/cultivos.png");
+    background-color: #0e0c0c;
+    color: #330505;
     background-size: cover;
 }
 
 header {
     background-color: #4CAF50;
-    color: #fff;
+    color: #0f0e42;
     text-align: center;
     padding: 15px 0;
 }
@@ -29,7 +28,7 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #fff;
+    color: #ffffff;
 }
 
 main {
@@ -40,14 +39,14 @@ main {
 section {
     margin: 20px auto;
     padding: 20px;
-    border: 1px solid #ccc;
-    background-color: #fff;
-    max-width: 800px;
+    border: 1px solid #cccccc;
+    background-color: #146e44;
+    max-width: 1290px;
     text-align: left;
 }
 
 section h2 {
-    color: #4CAF50;
+    color: #000000;
     border-bottom: 2px solid #4CAF50;
     padding-bottom: 5px;
 }
@@ -215,7 +214,7 @@ hr {
 
 .insumo-option {
     scroll-snap-align: start;
-    width: 100vw;
+    width: 90vw;
     flex-shrink: 0;
     scroll-snap-stop: always;
     text-align: center;
@@ -256,4 +255,30 @@ hr {
 
 .opcion-fertilizante p {
     display: none;
+}
+#contacto {
+    background-color: #146e44;
+    padding: 50px;
+    text-align: center;
+}
+
+#contacto h2 {
+    color: #000000;
+    font-size: 2em;
+}
+
+#contacto p {
+    color: #000000;
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+#contacto p:first-child {
+    font-weight: bold;
+    color: #007BFF;
+}
+
+#contacto p:last-child {
+    font-style: italic;
+    color: #000000;
 }

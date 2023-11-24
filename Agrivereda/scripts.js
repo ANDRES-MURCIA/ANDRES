@@ -12,20 +12,6 @@ cultivoInfoElements.forEach(cultivo => {
     });
 });
 
-const procesoInfoElements = document.querySelectorAll('.proceso-info');
-
-procesoInfoElements.forEach(proceso => {
-    proceso.addEventListener('click', () => {
-        proceso.classList.toggle('active');
-        const content = proceso.querySelector('p');
-        if (content.style.maxHeight) {
-            content.style.maxHeight = null;
-        } else {
-            content.style.maxHeight = content.scrollHeight + 'px';
-        }
-    });
-});
-
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -36,15 +22,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
+
 function toggleText(cultivo) {
     const description = document.getElementById(cultivo).getElementsByClassName('cultivo-description')[0];
     description.style.display = (description.style.display === 'none' || description.style.display === '') ? 'block' : 'none';
 }
-function toggleText1(proceso) {
-    const description = document.getElementById(proceso).getElementsByClassName('proceso-description')[0];
-    description.style.display = (description.style.display === 'none' || description.style.display === '') ? 'block' : 'none';
-}
-
 
 function mostrarFertilizantes() {
     var x = document.getElementById("fertilizantesContent");
