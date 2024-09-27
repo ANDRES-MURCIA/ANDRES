@@ -1,6 +1,6 @@
-print('*** Multiplicación de Cadenas ***')
+print("*** Multiplicación de Cadenas ***")
 
-texto = 'Hola'
+texto = "Hola"
 veces = 4
 
 resultado = texto * veces

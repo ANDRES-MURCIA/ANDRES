@@ -1,5 +1,5 @@
 # Manejo de indice en una cadena
-cadena1 = 'Hola Mundo'
+cadena1 = "Hola Mundo"
 print(cadena1)
 # Recuperar el primer caracter
 primer_caracter = cadena1[0]  # Recupera 'H'
