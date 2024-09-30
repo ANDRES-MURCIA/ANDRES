@@ -18,7 +18,7 @@ nombre_empresa = " Global Mentoring "
 print(f"\nNombre empresa: {nombre_empresa}")
 extension_dominio = ".com.mx"
 print(f"Extensión del dominio: {extension_dominio}")
-# Quitamos los espacios en blanco y convertimos a mayusculas
+# Quitamos los espacios en blanco y convertimos a minisculas
 nombre_empresa_normalizado = nombre_empresa.replace(" ", "").lower()
 dominio_email_normalizado = f"@{nombre_empresa_normalizado}{extension_dominio}"
 print(f"Dominio del email normalizado: {dominio_email_normalizado}")
