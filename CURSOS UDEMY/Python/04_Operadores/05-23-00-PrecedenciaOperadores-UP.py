@@ -13,4 +13,4 @@
 # 3. Suma 4 + 6 = 10
 # 4. Resta 10 - 1 = 9
 resultado = 12 // 3 + 2 * 3 - 1
-print(f'Resultado: {resultado}')
+print(f"Resultado: {resultado}")
