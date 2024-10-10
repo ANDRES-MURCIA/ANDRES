@@ -1,4 +1,4 @@
-print(f"*** Sentencia if ***")
+print("*** Sentencia if ***")
 
 edad = 30
 if edad >= 18:
